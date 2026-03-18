@@ -59,27 +59,27 @@ Because critical large files (like the trained models) are not pushed to GitHub,
 git clone [https://github.com/AIJAY-G/Fake-screenshot-and-edited-image-detection.git](https://github.com/AIJAY-G/Fake-screenshot-and-edited-image-detection.git)
 cd Fake-screenshot-and-edited-image-detection
 
-2. Set Up a Virtual Environment (Crucial)
+1. Set Up a Virtual Environment (Crucial)
    To avoid dependency conflicts (especially with NumPy and OpenCV), strictly use a virtual environment.
 
-# Create the environment
+Create the environment
 
 python -m venv .venv
 
-# Activate it (Windows PowerShell/CMD)
+Activate it (Windows PowerShell/CMD)
 
 .venv\Scripts\activate
 
-# Activate it (Mac/Linux)
+Activate it (Mac/Linux)
 
 source .venv/bin/activate
 
-3. Install Specific Dependencies
+1. Install Specific Dependencies
    The requirements.txt file contains exact version locks (e.g., numpy==1.26.4 and opencv-python-headless) to prevent math-engine compilation crashes.
 
 pip install -r requirements.txt
 
-4. 🛠️ Rebuild the Ignored Directories
+1. 🛠️ Rebuild the Ignored Directories
    Before the app can run, you must provide it with the mathematical models:
 
 Create a new folder named models in the root directory.
@@ -90,12 +90,12 @@ Place both .pkl files strictly inside the models/ folder.
 
 (Optional for Developers: If you wish to retrain the models from scratch, create a data/ folder, place your image datasets inside data/Au/ and data/Tp/, and run python src/train_models.py).
 
-5. Launch the Application
+1. Launch the Application
    Once the models/ folder is populated and dependencies are installed, boot up the dashboard:
 
 streamlit run app.py
 
-The application will open in your browser at http://localhost:8501.
+The application will open in your browser at <http://localhost:8501>.
 
 ⚠️ Known Limitations & Scope (Domain Shift)
 This pipeline is strictly optimized for Photographic Forensics. The underlying mathematical models rely heavily on analyzing natural camera sensor noise and JPEG compression artifacts.
